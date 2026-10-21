@@ -1,23 +1,76 @@
 aid: symphony3-com
+
 name: Symphony3
-description: 'Symphony3 is a company surfaced via the API Evangelist harvest backlog (source: g2-catalog)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Symphony3 provides a cloud-based platform that helps businesses manage and automate their operational workflows, integrating with various enterprise systems to streamline processes, improve efficiency, and enable data-driven decision making. The company offers tools for workflow orchestration, API integration, and real-time analytics, targeting mid-sized to large organizations seeking to modernize their operations and enhance productivity across departments.'
+
 url: https://raw.githubusercontent.com/api-evangelist/symphony3-com/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:g2-catalog
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-21 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-21'
+
 modified: '2026-10-21'
+
 tags:
 - Company
-apis: []
+- Workflow
+- Automation
+- Integration
+- Analytics
+- Enterprise
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
+image: https://www.symphony3.com/sites/default/files/symphony3-logo-color.svg
+
 common:
+- type: Hosts
+  url: hosts/symphony3-com-hosts.yml
+- type: TermsOfService
+  url: https://www.symphony3.com/terms
+- type: SignUp
+  url: https://www.symphony3.com/register-ai-tools-old
+- type: PrivacyPolicy
+  url: https://www.symphony3.com/privacy-policy
+- type: GitHubOrganization
+  url: https://github.com/Symphony3
+- type: DomainSecurity
+  url: security/symphony3-com-domain-security.yml
 - type: Website
-  url: https://symphony3.com/
+  url: https://www.symphony3.com/
+
+apis: []
+
+x-coverage:
+  state: none
+  reason: no-developer-program
+  method: derived
+  generated: '2026-10-21'
+  generator: derive-coverage.py (pre-flight evidence)
+  detail: >-
+    the company publishes no developer documentation host and no machine-readable contract on its own domain
+  evidence:
+  - url: https://api.symphony3.com/mcp
+    status: 403
+  - url: https://support.symphony3.com/mcp
+    status: 401
+  - url: https://symphony3.com/
+    status: 200
+x-enrichment:
+  date: '2026-10-21'
+  status: enriched
+  artifacts_added: 7
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
